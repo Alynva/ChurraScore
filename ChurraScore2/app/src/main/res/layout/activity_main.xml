@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a725862.churrascore.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.a725862.churrascore.MainActivity"
+        android:paddingBottom="40dp">
+
+        <Button
+            android:id="@+id/btn_goToFutebol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Futebol"/>
+        <Button
+            android:id="@+id/btn_goToTruco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Truco"/>
+
+    </LinearLayout>
+
+</ScrollView>
