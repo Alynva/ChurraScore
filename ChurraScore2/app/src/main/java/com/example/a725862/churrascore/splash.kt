@@ -15,7 +15,7 @@ class splash : AppCompatActivity() {
 
         Glide.with(this)
                 .load("https://abrilvip.files.wordpress.com/2018/07/dsc05420-e1531944649584.jpg")
-                .placeholder(R.mipmap.splash_bg)
+//                .placeholder(R.mipmap.splash_bg)
                 .into(splash_img);
 
         Handler().postDelayed({

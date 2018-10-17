@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.widget.TextView
+import android.widget.Toast
+import com.ceylonlabs.imageviewpopup.ImagePopup
 import kotlinx.android.synthetic.main.activity_truco.*
 
 class TrucoActivity : AppCompatActivity() {
@@ -33,10 +35,32 @@ class TrucoActivity : AppCompatActivity() {
             activedPts.text = (activedPts.text.toString().toInt()+pts).toString()
 
             if (activedPts.text.toString().toInt() >= 12) {
-                val wins = activedWins.text.toString().split(" ")[1].toString().toInt()+1
-                activedWins.text = "VITORIAS: $wins"
+                if (ptsTime1.text.toString().toInt() > ptsTime2.text.toString().toInt()) {
+                    val name = nameTime1Truco.text
+                    Toast.makeText(this, "O $name VENCEU!", Toast.LENGTH_SHORT).show()
+                    val wins = wins1.text.toString().split(" ")[1].toString().toInt()+1
+                    wins1.text = "VITORIAS: $wins"
+                } else if (ptsTime1.text.toString().toInt() < ptsTime2.text.toString().toInt()) {
+                    val name = nameTime2Truco.text
+                    Toast.makeText(this, "O $name VENCEU!", Toast.LENGTH_SHORT).show()
+                    val wins = wins2.text.toString().split(" ")[1].toString().toInt()+1
+                    wins2.text = "VITORIAS: $wins"
+                } else {
+                    Toast.makeText(this, "DEU VELHA!", Toast.LENGTH_SHORT).show()
+                }
+                ptsTime1.text = "0"
+                ptsTime2.text = "0"
 
-                activedPts.text = (activedPts.text.toString().toInt()-12).toString()
+
+                val imagePopup = ImagePopup(this);
+//        imagePopup.setWindowHeight(800); // Optional
+//        imagePopup.setWindowWidth(800); // Optional
+//        imagePopup.setBackgroundColor(Color.BLACK);  // Optional
+                imagePopup.setFullScreen(true); // Optional
+//        imagePopup.setHideCloseIcon(true);  // Optional
+//        imagePopup.setImageOnClickClose(true);  // Optional
+                imagePopup.initiatePopupWithGlide("https://st2.depositphotos.com/1005979/9531/i/950/depositphotos_95312146-stock-photo-and-the-winner-is-gold.jpg");
+                imagePopup.viewPopup()
             }
         }
 
