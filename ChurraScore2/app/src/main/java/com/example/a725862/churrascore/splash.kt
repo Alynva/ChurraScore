@@ -14,7 +14,7 @@ class splash : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Glide.with(this)
-                .load("https://abrilvip.files.wordpress.com/2018/07/dsc05420-e1531944649584.jpg")
+                .load("https://media.giphy.com/media/8BDrjcJxybobe/giphy.gif")
 //                .placeholder(R.mipmap.splash_bg)
                 .into(splash_img);
 
