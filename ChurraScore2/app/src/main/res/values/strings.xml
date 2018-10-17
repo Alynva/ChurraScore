@@ -3,8 +3,14 @@
     <string name="vitorias">VITÓRIAS:</string>
     <string name="adicionar_pontos">Adicionar Pontos:</string>
     <string name="pebolim">PEBOLIM</string>
-    <string name="truco">TRUCO</string>
     <string name="futebol">FUTEBOL</string>
     <string name="determinar_tempo">DETERMINAR TEMPO:</string>
     <string name="adicionar_gols">ADICIONAR GOLS:</string>
+    <string name="time_1">TIME 1</string>
+    <string name="time_2">TIME 2</string>
+    <string name="_7">7</string>
+    <string name="x">x</string>
+    <string name="_2">2</string>
+    <string name="vitorias_0">VITORIAS: 0</string>
+    <string name="truco">TRUCO</string>
 </resources>

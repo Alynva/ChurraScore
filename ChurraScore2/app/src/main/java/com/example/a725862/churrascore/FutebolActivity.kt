@@ -22,7 +22,7 @@ class FutebolActivity : AppCompatActivity() {
             activedPts.setBackgroundResource(0)
             activedPts = newPts
             activedWins = newWins
-            activedPts.setBackgroundColor(getResources().getColor(R.color.fundoSecundary))
+            activedPts.setBackgroundColor(getResources().getColor(R.color.secondaryLightColor))
         }
 
         ptsFutTime1.setOnClickListener() {

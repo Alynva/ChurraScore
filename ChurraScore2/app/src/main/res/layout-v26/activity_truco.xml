@@ -11,19 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.example.a725862.churrascore.TrucoActivity"
-        android:paddingBottom="40dp">
+        tools:context="com.example.a725862.churrascore.TrucoActivity">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/futebol"
+            android:text="TRUCO"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAlignment="center"
-            android:textSize="40dp"
+            android:textSize="40sp"
             android:textColor="@color/primaryColor"/>
 
         <LinearLayout
@@ -56,7 +55,7 @@
             android:weightSum="3"
             android:gravity="center">
             <TextView
-                android:id="@+id/ptsFutTime1"
+                android:id="@+id/ptsTime1"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
@@ -77,7 +76,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/primaryTextColor"/>
             <TextView
-                android:id="@+id/ptsFutTime2"
+                android:id="@+id/ptsTime2"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
@@ -91,62 +90,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="2"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
-            android:paddingHorizontal="20dp"
-            >
-            <LinearLayout
+            android:layout_marginVertical="10dp">
+            <TextView
+                android:id="@+id/wins1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:text="VITORIAS: 0"
                 android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:id="@+id/vitoriasTime1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/vitorias"
-                    android:textAlignment="center"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/vitoriasTime1Count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textAlignment="textStart"
-                    android:textSize="20dp" />
-            </LinearLayout>
-            <LinearLayout
+                android:textSize="25dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/wins2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:text="VITORIAS: 0"
                 android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:id="@+id/vitoriasTime2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/vitorias"
-                    android:textAlignment="center"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/vitoriasTime2Count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textAlignment="textStart"
-                    android:textSize="20dp" />
-            </LinearLayout>
+                android:textSize="25dp"
+                android:gravity="center"/>
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -155,7 +115,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/adicionar_gols"
+            android:text="ADICIONAR PONTOS:"
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
             android:layout_marginVertical="20dp"
@@ -166,7 +126,7 @@
             android:weightSum="2"
             android:paddingHorizontal="20dp">
             <Button
-                android:id="@+id/btnFutPlus1"
+                android:id="@+id/btnPlus1"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -175,7 +135,7 @@
                 android:background="@color/secondaryColor"
                 android:layout_marginHorizontal="10dp"/>
             <Button
-                android:id="@+id/btnFutMinus1"
+                android:id="@+id/btnMinus1"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -184,47 +144,48 @@
                 android:background="@color/secondaryColor"
                 android:layout_marginHorizontal="10dp"/>
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/timeLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/determinar_tempo"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginVertical="20dp"
-            android:textSize="15dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:weightSum="1">
-            <ImageButton
-                android:id="@+id/playCount"
-                android:layout_width="wrap_content"
+            android:weightSum="4"
+            android:paddingHorizontal="20dp"
+            android:layout_marginVertical="20dp">
+            <Button
+                android:id="@+id/btnPlus3"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_play_arrow"
-                android:background="@null"
-                android:layout_weight="0"/>
-
-
-            <SeekBar
-                android:id="@+id/countProgress"
-                android:layout_width="match_parent"
+                android:text="+3"
+                android:textSize="25dp"
+                android:background="@color/secondaryColor"
+                android:layout_marginHorizontal="5dp"/>
+            <Button
+                android:id="@+id/btnPlus6"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:thumbTint="@color/primaryColor"
-                android:progressTint="@color/secondaryColor"
-                android:progress="50"
-                android:layout_weight="1"/>
-
-            <ImageButton
-                android:id="@+id/pauseCount"
-                android:layout_width="wrap_content"
+                android:text="+6"
+                android:textSize="25dp"
+                android:background="@color/secondaryColor"
+                android:layout_marginHorizontal="5dp"/>
+            <Button
+                android:id="@+id/btnPlus9"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_pause"
-                android:background="@null"
-                android:layout_weight="0"/>
-
+                android:text="+9"
+                android:textSize="25dp"
+                android:background="@color/secondaryColor"
+                android:layout_marginHorizontal="5dp"/>
+            <Button
+                android:id="@+id/btnPlus12"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="+12"
+                android:textSize="25dp"
+                android:background="@color/secondaryColor"
+                android:layout_marginHorizontal="5dp"/>>
         </LinearLayout>
 
     </LinearLayout>
