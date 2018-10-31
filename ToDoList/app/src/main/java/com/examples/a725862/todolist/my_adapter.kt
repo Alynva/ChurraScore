@@ -10,7 +10,7 @@ import android.widget.TextView
  * Created by 725862 on 24/10/18.
  */
 
-class MyAdapter(private val dataset: MutableList<String>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val dataset: MutableList<MyTask>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     class MyViewHolder(val textView: LinearLayout) : RecyclerView.ViewHolder(textView)
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MyViewHolder {
@@ -23,7 +23,7 @@ class MyAdapter(private val dataset: MutableList<String>) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: MyViewHolder?, position: Int) {
         val view1 = holder?.textView?.getChildAt(1) as LinearLayout
         val view2 = view1.getChildAt(0) as TextView
-        view2.text = dataset[position]
+        view2.text = dataset[position].title
     }
 
     override fun getItemCount(): Int {

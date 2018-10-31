@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.examples.a725862.todolist.AddTask"
+    tools:context="com.examples.a725862.todolist.AddTaskActivity"
     android:paddingHorizontal="15dp"
     android:paddingTop="20dp">
 
@@ -14,9 +14,9 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/et_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="4"
             android:hint="Nome da tarefa"/>
         <Button
             android:id="@+id/btn_save"
