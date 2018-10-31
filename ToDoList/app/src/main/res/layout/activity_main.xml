@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btn_add_task"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:paddingVertical="8dp">
 
     </android.support.v7.widget.RecyclerView>
 

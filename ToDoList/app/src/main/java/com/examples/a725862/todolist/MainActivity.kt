@@ -22,16 +22,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        carregaLista()
+
+        btn_add_task.setOnClickListener {
+            btn_add_task_handle()
+        }
+    }
+
+    private fun carregaLista() {
         viewManager = LinearLayoutManager(this)
-        viewAdapter = MyAdapter(dataset)
+        viewAdapter = MyAdapter(this, dataset)
+
+        (viewAdapter as MyAdapter).setOnItemClickListenerOnBtn { myTask: MyTask, index: Int ->
+            dataset.remove(myTask)
+            viewAdapter.notifyDataSetChanged()
+        }
 
         recyclerView = rvTaks.apply {
             layoutManager = viewManager
             adapter = viewAdapter
-        }
-
-        btn_add_task.setOnClickListener {
-            btn_add_task_handle()
         }
     }
 
@@ -39,10 +48,8 @@ class MainActivity : AppCompatActivity() {
         if(requestCode == REQUEST_NOVA_TASK && resultCode == Activity.RESULT_OK) {
             val new_task : MyTask = data?.getSerializableExtra(AddTaskActivity.MY_TASK) as MyTask
 
-            if (new_task !== null) {
-                dataset.add(new_task)
-                viewAdapter.notifyDataSetChanged()
-            }
+            dataset.add(new_task)
+            viewAdapter.notifyDataSetChanged()
         }
     }
 
@@ -50,4 +57,6 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, AddTaskActivity::class.java)
         startActivityForResult(intent, REQUEST_NOVA_TASK)
     }
+
+
 }
